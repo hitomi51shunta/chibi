@@ -9,15 +9,18 @@ Value={[0-9]+#Int}
 parser = pegpy.generate(peg)
 
 def calc(t):
-    if t.tag == ’Int’:
+    if t == ’Int’:
         return int(str(t))
-    elif t.tag == ’Add’:
+    elif t == ’Add’:
         return calc(t[0]) + calc(t[1])
-    elif t.tag == ’Mul’:
+    elif t == ’Mul’:
         return calc(t[0]) * calc(t[1])
     else:
         print(f’TODO {t.tag})’
         return 0
         
-t=parser(’1+2*3+4*5’)
-print(calc(t))
+def main():
+    s = input('$ ')
+    t = parser(s)
+    print(calc(t))
+
