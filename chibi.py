@@ -22,12 +22,11 @@ if __name__=="__main__":
     x = (n)
     result2 = digitSum(x)
 
-if result1 == result2
+if result1==result2:
     print('抜群')
-elif 0 < abs(result1-result2) <3:
+elif 0 < abs(int(result1)-int(result2)) <3:
     print('最高')
-elif 2 < abs(result1-result2) <7:
+elif 2 < abs(int(result1)-int(result2)) <7:
     print('普通')
 else:
     print('残念')
-    
